@@ -15,7 +15,7 @@ services:
         soft: -1
         hard: -1
     volumes:
-      - data01:/h/passwords/data
+      - /media/sf_passwords/data01:/usr/share/elasticsearch/data
     ports:
       - 9200:9200
     networks:
@@ -35,7 +35,7 @@ services:
         soft: -1
         hard: -1
     volumes:
-      - data02:/h/passwords/data
+      - /media/sf_passwords/data02:/usr/share/elasticsearch/data
     networks:
       - elastic
   es03:
@@ -53,7 +53,7 @@ services:
         soft: -1
         hard: -1
     volumes:
-      - data03:/h/passwords/data
+      - /media/sf_passwords/data03:/usr/share/elasticsearch/data
     networks:
       - elastic
   es04:
@@ -71,7 +71,7 @@ services:
         soft: -1
         hard: -1
     volumes:
-      - data04:/h/passwords/data
+      - /media/sf_passwords/data04:/usr/share/elasticsearch/data
     networks:
       - elastic
   es05:
@@ -89,21 +89,9 @@ services:
         soft: -1
         hard: -1
     volumes:
-      - data05:/h/passwords/data
+      - /media/sf_passwords/data05:/usr/share/elasticsearch/data
     networks:
       - elastic
-
-volumes:
-  data01:
-    driver: local
-  data02:
-    driver: local
-  data03:
-    driver: local
-  data04:
-    driver: local
-  data05:
-    driver: local
 
 networks:
   elastic:

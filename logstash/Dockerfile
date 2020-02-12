@@ -12,11 +12,12 @@ RUN mkdir $files_root
 
 # Add files which need to be processed.
 # You will want augment this if we want to have instances processing chunks of data.
-ADD dataset/ $files_root/
+#ADD dataset/ $files_root/
 
 RUN rm -f $logstash_home/pipeline/logstash.conf
 ADD pipeline/ $logstash_home/pipeline/
-ADD config/ $logstash_home/config/
+#RUN rm -f $logstash_home/config/*
+#ADD config/ $logstash_home/config/
 
 RUN mkdir $logstash_home/since_db_path/
 RUN touch $logstash_home/since_db_path/file
